@@ -8,19 +8,25 @@ export default function Login() {
         password: string;
     }
     const [user, setUser] = useState<IUser>({ name: '', email: '', password: '' });
-    const { name, email, password } = user;
 
-    function handleUser(e: { target: { name: string; value: string; }; }) {
-        const fieldName = e.target.name;
-        if (fieldName === 'name') {
-            setUser({ name: e.target.value, email, password });
-        } else if (fieldName === 'email') {
-            setUser({ name, email: e.target.value, password });
-        } else {
-            setUser({ name, email, password: e.target.value });
-        }
+    function handleUser(e: { target: { name: string; value: string } }) {
+        setUser({ ...user, [e.target.name]: e.target.value });
 
     }
+
+    // const { name, email, password } = user;
+
+    // function handleUser(e: { target: { name: string; value: string; }; }) {
+    //     const fieldName = e.target.name;
+    //     if (fieldName === 'name') {
+    //         setUser({ name: e.target.value, email, password });
+    //     } else if (fieldName === 'email') {
+    //         setUser({ name, email: e.target.value, password });
+    //     } else {
+    //         setUser({ name, email, password: e.target.value });
+    //     }
+
+    // }
 
     function handleSubmit(e: { preventDefault: () => void }) {
         e.preventDefault();
