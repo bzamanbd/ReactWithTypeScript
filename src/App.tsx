@@ -1,10 +1,10 @@
 import './App.css'
-function App() {
+import Login from './components/forms/Login'
+export default function App() {
   return (
     <>
-
+      <Login />
     </>
   )
 }
 
-export default App
