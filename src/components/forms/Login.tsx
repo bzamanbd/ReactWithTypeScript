@@ -12,9 +12,9 @@ export default function Login() {
 
     function handleUser(e: { target: { name: string; value: string; }; }) {
         const fieldName = e.target.name;
-        if (fieldName == 'name') {
+        if (fieldName === 'name') {
             setUser({ name: e.target.value, email, password });
-        } else if (fieldName == 'email') {
+        } else if (fieldName === 'email') {
             setUser({ name, email: e.target.value, password });
         } else {
             setUser({ name, email, password: e.target.value });
