@@ -1,12 +1,10 @@
 import './App.css'
-import ChildComponents from './components/STATE_LIFTING/ChildComponents'
+import TodoHome from './components/todo/todo_home'
 export default function App() {
-  function onChildData(userData: { name: string, phone: number }): void {
-    console.log(userData);
-  }
+
   return (
     <>
-      <ChildComponents onChildData={onChildData} />
+      <TodoHome />
     </>
   )
 }
